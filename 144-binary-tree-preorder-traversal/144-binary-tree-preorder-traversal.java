@@ -31,11 +31,10 @@ class Solution {
         Stack<TreeNode> st = new Stack<>();
         st.push(root);
         while(!st.isEmpty()){
-            TreeNode n = st.peek();
+            TreeNode n = st.pop();
             list.add(n.val);
             if(n.right !=null)st.push(n.right);
             if(n.left != null)st.push(n.left);
-            st.remove(n);
         }
         return list;
     }

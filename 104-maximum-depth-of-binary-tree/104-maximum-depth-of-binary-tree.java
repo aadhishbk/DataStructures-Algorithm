@@ -15,7 +15,7 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        int count =0;
+      /*  int count =0;
         Queue<TreeNode> q = new LinkedList<>();
         if(root == null)return count;
         q.offer(root);
@@ -28,6 +28,13 @@ class Solution {
                 q.poll();
             }
         }
-        return count;
+        return count;*/
+        
+        //recursive
+        if(root == null) return 0;
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        
+        return 1+Math.max(left,right);
     }
 }
